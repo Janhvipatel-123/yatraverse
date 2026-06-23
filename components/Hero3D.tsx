@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import MagneticButton from './MagneticButton';
 
 // Deterministic pseudo-random number generator to avoid hydration mismatches
 const seededRandom = (seed: number) => {
@@ -21,14 +22,19 @@ const particles = Array.from({ length: 20 }).map((_, i) => ({
 }));
 
 export default function Hero3D() {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 1000], [0, 300]);
+  const y2 = useTransform(scrollY, [0, 1000], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#0A0A0A]">
       {/* 3D Scene Placeholder Area (z-0) */}
-      <div className="absolute inset-0 z-0 opacity-50" id="spline-scene-container">
+      <motion.div style={{ y: y1 }} className="absolute inset-0 z-0 opacity-50" id="spline-scene-container">
         {/* Ambient Glows */}
         <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-amber-700/20 rounded-full blur-[120px] animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[800px] bg-amber-500/10 rounded-full blur-[150px] animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-rose-900/10 rounded-full blur-[100px] animate-pulse delay-500"></div>
         
         {/* Floating Particles */}
         {particles.map((p) => (
@@ -54,10 +60,11 @@ export default function Hero3D() {
             }}
           />
         ))}
-      </div>
+      </motion.div>
 
       {/* Hero Content (z-10) */}
       <motion.div 
+        style={{ y: y2, opacity }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -83,12 +90,12 @@ export default function Hero3D() {
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <MagneticButton>
             <Link href="/destinations/mathura" className="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-400 text-[#0A0A0A] font-bold rounded-full transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] flex items-center justify-center gap-2 group">
               <span>Start Exploring</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </Link>
-          </motion.div>
+          </MagneticButton>
         </motion.div>
       </motion.div>
 

@@ -4,36 +4,14 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Hero3D from '../components/Hero3D';
+import TiltCard from '../components/TiltCard';
+import Navigation from '../components/Navigation';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans selection:bg-amber-500/30">
       {/* Navigation */}
-      <nav className="absolute top-0 w-full z-50 px-6 py-6 border-b border-neutral-800 bg-[#0A0A0A]/50 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center transition-transform group-hover:scale-110">
-              <span className="text-[#0A0A0A] font-bold text-sm leading-none">Y</span>
-            </div>
-            <span className="text-2xl font-semibold tracking-wider text-amber-500">
-              Yatra<span className="text-neutral-100">Verse</span>
-            </span>
-          </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-            <a href="#destinations" className="text-neutral-200 hover:text-amber-500 transition-colors">Destinations</a>
-            <Link href="/ai-guide" className="text-neutral-200 hover:text-amber-500 transition-colors">AI Guide</Link>
-            <a href="#rides" className="text-neutral-200 hover:text-amber-500 transition-colors">Book a Ride</a>
-            <a href="#gallery" className="text-neutral-200 hover:text-amber-500 transition-colors">Gallery</a>
-          </div>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#0A0A0A] font-bold rounded-full transition-all shadow-[0_0_15px_rgba(245,158,11,0.2)] hover:shadow-[0_0_25px_rgba(245,158,11,0.4)]"
-          >
-            Sign In
-          </motion.button>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <Hero3D />
@@ -57,11 +35,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Mathura Card */}
-            <motion.div 
-              whileHover={{ scale: 1.02, y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group relative h-[480px] rounded-3xl overflow-hidden cursor-pointer border border-neutral-800 hover:border-amber-500/50 transition-all duration-500 bg-neutral-950"
-            >
+            <TiltCard className="h-[480px]">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-blue-950/40 group-hover:scale-110 transition-transform duration-700">
                  <div className="absolute inset-0 bg-[url('/images/destinations/mathura.jpg')] bg-cover bg-center opacity-70 group-hover:opacity-90"></div>
               </div>
@@ -73,14 +47,10 @@ export default function Home() {
                   Explore Mathura
                 </Link>
               </div>
-            </motion.div>
+            </TiltCard>
 
             {/* Vrindavan Card */}
-            <motion.div 
-              whileHover={{ scale: 1.02, y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group relative h-[480px] rounded-3xl overflow-hidden cursor-pointer border border-neutral-800 hover:border-amber-500/50 transition-all duration-500 bg-neutral-950"
-            >
+            <TiltCard className="h-[480px]">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-emerald-950/40 group-hover:scale-110 transition-transform duration-700">
                  <div className="absolute inset-0 bg-[url('/images/destinations/vrindavan.jpg')] bg-cover bg-center opacity-70 group-hover:opacity-90"></div>
               </div>
@@ -92,14 +62,10 @@ export default function Home() {
                   Explore Vrindavan
                 </Link>
               </div>
-            </motion.div>
+            </TiltCard>
 
             {/* Agra Card */}
-            <motion.div 
-              whileHover={{ scale: 1.02, y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group relative h-[480px] rounded-3xl overflow-hidden cursor-pointer border border-neutral-800 hover:border-amber-500/50 transition-all duration-500 bg-neutral-950"
-            >
+            <TiltCard className="h-[480px]">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-amber-950/40 group-hover:scale-110 transition-transform duration-700">
                  <div className="absolute inset-0 bg-[url('/images/destinations/agra.jpg')] bg-cover bg-center opacity-70 group-hover:opacity-90"></div>
               </div>
@@ -111,14 +77,10 @@ export default function Home() {
                   Explore Agra
                 </button>
               </div>
-            </motion.div>
+            </TiltCard>
 
             {/* Jaipur Card */}
-            <motion.div 
-              whileHover={{ scale: 1.02, y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group relative h-[480px] rounded-3xl overflow-hidden cursor-pointer border border-neutral-800 hover:border-amber-500/50 transition-all duration-500 bg-neutral-950"
-            >
+            <TiltCard className="h-[480px]">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-rose-950/40 group-hover:scale-110 transition-transform duration-700">
                  <div className="absolute inset-0 bg-[url('/images/destinations/jaipur.jpg')] bg-cover bg-center opacity-70 group-hover:opacity-90"></div>
               </div>
@@ -130,7 +92,7 @@ export default function Home() {
                   Explore Jaipur
                 </button>
               </div>
-            </motion.div>
+            </TiltCard>
           </div>
         </div>
       </motion.section>
@@ -159,12 +121,7 @@ export default function Home() {
               { title: 'Banke Bihari Temple', image: 'banke-bihari.jpg' },
               { title: 'ISKCON Vrindavan', image: 'iskcon-vrindavan.jpg' },
             ].map(place => (
-              <motion.div 
-                whileHover={{ scale: 1.03, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                key={place.title} 
-                className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-neutral-800 hover:border-amber-500/50 transition-all p-4"
-              >
+              <TiltCard key={place.title} className="p-4">
                 <div className="relative h-48 rounded-xl overflow-hidden mb-4">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-amber-950/40 group-hover:scale-110 transition-transform duration-700">
                     <div className="absolute inset-0 bg-cover bg-center opacity-80" style={{ backgroundImage: `url('/images/highlights/${place.image}')` }}></div>
@@ -177,7 +134,7 @@ export default function Home() {
                   View Details
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </button>
-              </motion.div>
+              </TiltCard>
             ))}
           </div>
         </div>
