@@ -3,23 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import MagneticButton from './MagneticButton';
 
-// Deterministic pseudo-random number generator to avoid hydration mismatches
-const seededRandom = (seed: number) => {
-  const x = Math.sin(seed) * 10000;
-  return x - Math.floor(x);
-};
-
-// Generate static particles for the background
-const particles = Array.from({ length: 20 }).map((_, i) => ({
-  id: i,
-  size: seededRandom(i * 1.1) * 4 + 1,
-  initialX: seededRandom(i * 2.2) * 100,
-  initialY: seededRandom(i * 3.3) * 100,
-  duration: seededRandom(i * 4.4) * 20 + 10,
-  delay: seededRandom(i * 5.5) * 5,
-}));
+const Scene3D = dynamic(() => import('./Scene3D'), { ssr: false });
 
 export default function Hero3D() {
   const { scrollY } = useScroll();
@@ -29,37 +16,9 @@ export default function Hero3D() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#0A0A0A]">
-      {/* 3D Scene Placeholder Area (z-0) */}
-      <motion.div style={{ y: y1 }} className="absolute inset-0 z-0 opacity-50" id="spline-scene-container">
-        {/* Ambient Glows */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-amber-700/20 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[800px] bg-amber-500/10 rounded-full blur-[150px] animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-rose-900/10 rounded-full blur-[100px] animate-pulse delay-500"></div>
-        
-        {/* Floating Particles */}
-        {particles.map((p) => (
-          <motion.div
-            key={p.id}
-            className="absolute rounded-full bg-amber-500/30 blur-[1px]"
-            style={{
-              width: p.size,
-              height: p.size,
-              left: `${p.initialX}%`,
-              top: `${p.initialY}%`,
-            }}
-            animate={{
-              y: ["0%", "-100%", "0%"],
-              x: ["0%", "50%", "0%"],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: p.duration,
-              repeat: Infinity,
-              ease: "linear",
-              delay: p.delay,
-            }}
-          />
-        ))}
+      {/* 3D Scene Area (z-0) */}
+      <motion.div style={{ y: y1 }} className="absolute inset-0 z-0 opacity-100" id="spline-scene-container">
+        <Scene3D />
       </motion.div>
 
       {/* Hero Content (z-10) */}
