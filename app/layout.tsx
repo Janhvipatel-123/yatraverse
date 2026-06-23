@@ -15,8 +15,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "YatraVerse - Luxury Travel",
-  description: "Reimagining Travel Through Meaningful Journeys",
+  title: {
+    template: "%s | YatraVerse",
+    default: "YatraVerse | Luxury Travel & Spiritual Journeys in India",
+  },
+  description: "Experience the soul of India with YatraVerse. Discover premium luxury travel, curated heritage walks, and bespoke spiritual journeys.",
+  keywords: ["Luxury Travel India", "Spiritual Journeys", "Heritage Walks", "YatraVerse", "Custom Itineraries", "Premium Travel"],
+  openGraph: {
+    title: "YatraVerse | Luxury Travel & Spiritual Journeys in India",
+    description: "Experience the soul of India with YatraVerse. Discover premium luxury travel, curated heritage walks, and bespoke spiritual journeys.",
+    url: "https://yatraverse.com",
+    siteName: "YatraVerse",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80",
+        width: 1200,
+        height: 630,
+        alt: "YatraVerse Luxury Travel India",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YatraVerse | Luxury Travel & Spiritual Journeys",
+    description: "Experience the soul of India with YatraVerse.",
+    images: ["https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80"],
+  },
 };
 
 export default function RootLayout({
