@@ -5,13 +5,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Hero3D from '../components/Hero3D';
 import TiltCard from '../components/TiltCard';
-import Navigation from '../components/Navigation';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans selection:bg-amber-500/30">
-      {/* Navigation */}
-      <Navigation />
 
       {/* Hero Section */}
       <Hero3D />
@@ -405,80 +402,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Footer */}
-      <footer className="bg-neutral-950 border-t border-neutral-900/50 pt-20 pb-10 px-6 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-600/5 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-            <div className="lg:col-span-2">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center">
-                  <span className="text-[#0A0A0A] font-bold text-sm leading-none">Y</span>
-                </div>
-                <span className="text-2xl font-semibold tracking-wider text-amber-500">
-                  Yatra<span className="text-neutral-100">Verse</span>
-                </span>
-              </div>
-              <p className="text-neutral-400 mb-8 leading-relaxed">
-                Discover the divine, embrace the culture, and travel in absolute luxury. Your premium gateway to spiritual and historical India.
-              </p>
-              <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">
-                  <span className="text-xs font-bold">IG</span>
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">
-                  <span className="text-xs font-bold">FB</span>
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">
-                  <span className="text-xs font-bold">X</span>
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="text-neutral-50 font-bold mb-6 tracking-wide uppercase text-sm">Quick Links</h4>
-              <ul className="space-y-4">
-                <li><a href="#" className="text-neutral-400 hover:text-amber-500 transition-colors text-sm">Home</a></li>
-                <li><a href="#" className="text-neutral-400 hover:text-amber-500 transition-colors text-sm">About Us</a></li>
-                <li><a href="#" className="text-neutral-400 hover:text-amber-500 transition-colors text-sm">Travel Blog</a></li>
-                <li><a href="#" className="text-neutral-400 hover:text-amber-500 transition-colors text-sm">AI Assistant</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-neutral-50 font-bold mb-6 tracking-wide uppercase text-sm">Destinations</h4>
-              <ul className="space-y-4">
-                <li><Link href="/destinations/mathura" className="text-neutral-400 hover:text-amber-500 transition-colors text-sm">Mathura</Link></li>
-                <li><Link href="/destinations/vrindavan" className="text-neutral-400 hover:text-amber-500 transition-colors text-sm">Vrindavan</Link></li>
-                <li><Link href="/destinations/agra" className="text-neutral-400 hover:text-amber-500 transition-colors text-sm">Agra</Link></li>
-                <li><Link href="/destinations/jaipur" className="text-neutral-400 hover:text-amber-500 transition-colors text-sm">Jaipur</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-neutral-50 font-bold mb-6 tracking-wide uppercase text-sm">Newsletter</h4>
-              <p className="text-neutral-500 text-sm mb-4">Subscribe for curated itineraries and exclusive travel offers.</p>
-              <div className="flex bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden focus-within:border-amber-500/50 transition-colors">
-                <input type="email" placeholder="Your email address" className="bg-transparent w-full px-4 py-3 text-sm text-neutral-200 focus:outline-none" />
-                <button className="bg-amber-500 text-[#0A0A0A] px-4 font-bold hover:bg-amber-400 transition-colors">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-neutral-900 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-neutral-600 text-sm">
-              &copy; {new Date().getFullYear()} YatraVerse. Crafted for the discerning traveler.
-            </p>
-            <div className="flex gap-6">
-              <a href="#" className="text-neutral-600 hover:text-neutral-300 text-xs transition-colors">Privacy Policy</a>
-              <a href="#" className="text-neutral-600 hover:text-neutral-300 text-xs transition-colors">Terms of Service</a>
-              <a href="#" className="text-neutral-600 hover:text-neutral-300 text-xs transition-colors">Support</a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

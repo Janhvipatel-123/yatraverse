@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Navigation from '../../components/Navigation';
 
 const categories = [
   {
@@ -104,7 +103,6 @@ const reasons = [
 export default function ExperiencesPage() {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans selection:bg-amber-500/30">
-      <Navigation />
 
       {/* Cinematic Hero Section */}
       <motion.section 
@@ -321,12 +319,6 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black border-t border-white/5 py-12 px-6 text-center">
-        <p className="text-neutral-500 text-sm tracking-widest uppercase">
-          &copy; {new Date().getFullYear()} YatraVerse. Crafted for the discerning traveler.
-        </p>
-      </footer>
     </div>
   );
 }

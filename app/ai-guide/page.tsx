@@ -1,31 +1,10 @@
 "use client";
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function AIGuidePage() {
   return (
     <div className="pt-24 pb-16 min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans flex flex-col max-w-7xl mx-auto px-6 relative">
-      {/* Navigation (Temporary Inline) */}
-      <nav className="absolute top-0 left-0 w-full z-50 px-6 py-6 border-b border-neutral-800 bg-[#0A0A0A]/50 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center transition-transform group-hover:scale-110">
-              <span className="text-[#0A0A0A] font-bold text-sm leading-none">Y</span>
-            </div>
-            <span className="text-2xl font-semibold tracking-wider text-amber-500">
-              Yatra<span className="text-neutral-100">Verse</span>
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-            <Link href="/" className="text-neutral-200 hover:text-amber-500 transition-colors">Home</Link>
-            <Link href="/destinations/mathura" className="text-neutral-200 hover:text-amber-500 transition-colors">Mathura</Link>
-            <Link href="/ai-guide" className="text-amber-500 transition-colors">AI Guide</Link>
-            <Link href="/rides" className="text-neutral-200 hover:text-amber-500 transition-colors">Book a Ride</Link>
-          </div>
-        </div>
-      </nav>
-
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

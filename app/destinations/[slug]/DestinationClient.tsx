@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Destination } from '../../../lib/destinations';
-import Navigation from '../../../components/Navigation';
 
 interface Props {
   destination: Destination;
@@ -15,7 +14,6 @@ export default function DestinationClient({ destination }: Props) {
 
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans selection:bg-amber-500/30">
-      <Navigation />
 
       {/* Cinematic Hero Section */}
       <motion.section 
@@ -315,12 +313,6 @@ export default function DestinationClient({ destination }: Props) {
         </div>
       </motion.section>
 
-      {/* Footer */}
-      <footer className="bg-black border-t border-white/5 py-12 px-6 text-center">
-        <p className="text-neutral-500 text-sm tracking-widest uppercase">
-          &copy; {new Date().getFullYear()} YatraVerse. Crafted for the discerning traveler.
-        </p>
-      </footer>
     </div>
   );
 }
