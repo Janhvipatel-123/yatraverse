@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Hero3D from '../components/Hero3D';
 
 export default function Home() {
   return (
@@ -35,47 +36,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-amber-700/20 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[800px] bg-amber-500/10 rounded-full blur-[150px] animate-pulse delay-1000"></div>
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative z-10 text-center px-6 max-w-5xl mx-auto mt-16"
-        >
-          <motion.span 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="inline-block py-1 px-3 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-sm font-bold tracking-widest uppercase mb-6 shadow-[0_0_15px_rgba(245,158,11,0.15)]"
-          >
-            Premium Spiritual Tourism
-          </motion.span>
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tight drop-shadow-2xl">
-            Explore <span className="text-amber-500">India</span> Like Never Before
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto mb-12 leading-relaxed drop-shadow-md">
-            Discover destinations, plan journeys, chat with an AI travel guide, and book personal rides through one immersive travel experience.
-          </p>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link href="/destinations/mathura" className="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-400 text-[#0A0A0A] font-bold rounded-full transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] flex items-center justify-center gap-2 group">
-                <span>Start Exploring</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </section>
+      <Hero3D />
 
       {/* Featured Destinations */}
       <motion.section 

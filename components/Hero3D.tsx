@@ -1,0 +1,111 @@
+"use client";
+
+import React from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+// Deterministic pseudo-random number generator to avoid hydration mismatches
+const seededRandom = (seed: number) => {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+};
+
+// Generate static particles for the background
+const particles = Array.from({ length: 20 }).map((_, i) => ({
+  id: i,
+  size: seededRandom(i * 1.1) * 4 + 1,
+  initialX: seededRandom(i * 2.2) * 100,
+  initialY: seededRandom(i * 3.3) * 100,
+  duration: seededRandom(i * 4.4) * 20 + 10,
+  delay: seededRandom(i * 5.5) * 5,
+}));
+
+export default function Hero3D() {
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#0A0A0A]">
+      {/* 3D Scene Placeholder Area (z-0) */}
+      <div className="absolute inset-0 z-0 opacity-50" id="spline-scene-container">
+        {/* Ambient Glows */}
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-amber-700/20 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[800px] bg-amber-500/10 rounded-full blur-[150px] animate-pulse delay-1000"></div>
+        
+        {/* Floating Particles */}
+        {particles.map((p) => (
+          <motion.div
+            key={p.id}
+            className="absolute rounded-full bg-amber-500/30 blur-[1px]"
+            style={{
+              width: p.size,
+              height: p.size,
+              left: `${p.initialX}%`,
+              top: `${p.initialY}%`,
+            }}
+            animate={{
+              y: ["0%", "-100%", "0%"],
+              x: ["0%", "50%", "0%"],
+              opacity: [0.2, 0.8, 0.2],
+            }}
+            transition={{
+              duration: p.duration,
+              repeat: Infinity,
+              ease: "linear",
+              delay: p.delay,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Hero Content (z-10) */}
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto mt-16 pointer-events-auto"
+      >
+        <motion.span 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="inline-block py-1 px-3 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-sm font-bold tracking-widest uppercase mb-6 shadow-[0_0_15px_rgba(245,158,11,0.15)] backdrop-blur-sm"
+        >
+          Premium Spiritual Tourism
+        </motion.span>
+        <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tight drop-shadow-2xl">
+          Explore <span className="text-amber-500">India</span> Like Never Before
+        </h1>
+        <p className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto mb-12 leading-relaxed drop-shadow-md">
+          Discover destinations, plan journeys, chat with an AI travel guide, and book personal rides through one immersive travel experience.
+        </p>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link href="/destinations/mathura" className="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-400 text-[#0A0A0A] font-bold rounded-full transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] flex items-center justify-center gap-2 group">
+              <span>Start Exploring</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+      >
+        <span className="text-neutral-500 text-xs font-bold tracking-widest uppercase">Scroll to Discover</span>
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px h-12 bg-gradient-to-b from-amber-500 to-transparent"
+        ></motion.div>
+      </motion.div>
+    </section>
+  );
+}
