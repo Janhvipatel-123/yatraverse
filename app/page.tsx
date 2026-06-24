@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Hero3D from '../components/Hero3D';
-import TiltCard from '../components/TiltCard';
+import TiltCard from '../components/ui/TiltCard';
 
 export default function Home() {
   return (
@@ -294,37 +294,39 @@ export default function Home() {
                 img: 'https://images.unsplash.com/photo-1526715174360-15f5cc1143c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' 
               }
             ].map((pkg, idx) => (
-              <div key={idx} className="group rounded-3xl overflow-hidden bg-white/5 border border-white/5 hover:border-amber-500/30 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] relative backdrop-blur-md">
-                <div className="h-64 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10"></div>
-                  <img src={pkg.img} alt={pkg.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
-                  <div className="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
-                    <span className="text-xs font-bold text-amber-500 uppercase tracking-widest">{pkg.duration}</span>
+              <TiltCard key={idx} tiltIntensity={12} className="h-full">
+                <div className="group rounded-3xl overflow-hidden bg-white/5 border border-white/5 hover:border-amber-500/30 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] relative backdrop-blur-md h-full flex flex-col">
+                  <div className="h-64 overflow-hidden relative shrink-0">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10"></div>
+                    <img src={pkg.img} alt={pkg.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
+                    <div className="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
+                      <span className="text-xs font-bold text-amber-500 uppercase tracking-widest">{pkg.duration}</span>
+                    </div>
+                    <div className="absolute bottom-6 left-6 z-20 pr-6">
+                      <h3 className="text-3xl font-bold text-white font-serif drop-shadow-md">{pkg.name}</h3>
+                    </div>
                   </div>
-                  <div className="absolute bottom-6 left-6 z-20 pr-6">
-                    <h3 className="text-3xl font-bold text-white font-serif drop-shadow-md">{pkg.name}</h3>
-                  </div>
-                </div>
-                <div className="p-8 bg-gradient-to-b from-[#0A0A0A]/50 to-[#0A0A0A] relative">
-                  <div className="absolute -top-10 right-6 z-30 bg-amber-500 text-black px-4 py-3 rounded-2xl font-bold shadow-xl border border-amber-400">
-                    <span className="text-xs uppercase tracking-wider block opacity-80">From</span>
-                    <span className="text-xl">{pkg.price}</span>
-                  </div>
-                  <div className="space-y-4 mb-8 pt-2">
-                    {pkg.highlights.map((hlt, i) => (
-                      <div key={i} className="flex items-center gap-4">
-                        <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center border border-amber-500/20">
-                          <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+                  <div className="p-8 bg-gradient-to-b from-[#0A0A0A]/50 to-[#0A0A0A] relative flex-grow flex flex-col">
+                    <div className="absolute -top-10 right-6 z-30 bg-amber-500 text-black px-4 py-3 rounded-2xl font-bold shadow-xl border border-amber-400">
+                      <span className="text-xs uppercase tracking-wider block opacity-80">From</span>
+                      <span className="text-xl">{pkg.price}</span>
+                    </div>
+                    <div className="space-y-4 mb-8 pt-2 flex-grow">
+                      {pkg.highlights.map((hlt, i) => (
+                        <div key={i} className="flex items-center gap-4">
+                          <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center border border-amber-500/20 shrink-0">
+                            <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+                          </div>
+                          <span className="text-neutral-300 font-medium">{hlt}</span>
                         </div>
-                        <span className="text-neutral-300 font-medium">{hlt}</span>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                    <button className="w-full py-4 rounded-xl bg-amber-500/10 border border-amber-500/20 hover:bg-amber-500 hover:text-black hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-amber-500 font-bold text-sm tracking-widest uppercase transition-all duration-300">
+                      View Itinerary
+                    </button>
                   </div>
-                  <button className="w-full py-4 rounded-xl bg-amber-500/10 border border-amber-500/20 hover:bg-amber-500 hover:text-black hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-amber-500 font-bold text-sm tracking-widest uppercase transition-all duration-300">
-                    View Itinerary
-                  </button>
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -354,22 +356,24 @@ export default function Home() {
               { name: 'Aarav Singhania', role: 'Business Executive', text: 'YatraVerse transformed my trip to Vrindavan. The VIP access to Banke Bihari temple and the seamless luxury transfers made the spiritual experience profoundly peaceful, free from any logistical stress.' },
               { name: 'Priya Desai', role: 'Global Traveler', text: 'I have traveled the world, but the meticulous attention to detail YatraVerse provided during our heritage palace stay in Mathura was unparalleled. A truly majestic and divine journey.' }
             ].map((testimonial, idx) => (
-              <div key={idx} className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl relative hover:border-amber-500/30 transition-colors duration-500">
-                <div className="absolute -top-6 left-10 text-6xl text-amber-500/20 font-serif">"</div>
-                <div className="flex text-amber-500 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                  ))}
-                </div>
-                <p className="text-neutral-300 text-lg leading-relaxed mb-8 relative z-10 italic">"{testimonial.text}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-700"></div>
-                  <div>
-                    <h5 className="text-white font-bold">{testimonial.name}</h5>
-                    <p className="text-neutral-500 text-sm">{testimonial.role}</p>
+              <TiltCard key={idx} tiltIntensity={10} className="h-full">
+                <div className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl relative hover:border-amber-500/30 transition-colors duration-500 h-full">
+                  <div className="absolute -top-6 left-10 text-6xl text-amber-500/20 font-serif">"</div>
+                  <div className="flex text-amber-500 mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    ))}
+                  </div>
+                  <p className="text-neutral-300 text-lg leading-relaxed mb-8 relative z-10 italic">"{testimonial.text}"</p>
+                  <div className="flex items-center gap-4 mt-auto">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 shrink-0"></div>
+                    <div>
+                      <h5 className="text-white font-bold">{testimonial.name}</h5>
+                      <p className="text-neutral-500 text-sm">{testimonial.role}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>

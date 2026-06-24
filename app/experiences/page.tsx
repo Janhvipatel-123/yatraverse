@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import TiltCard from '../../components/ui/TiltCard';
 
 const categories = [
   {
@@ -262,14 +263,17 @@ export default function ExperiencesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="group relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer"
               >
-                <img src={sig.image} alt={sig.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <h3 className="text-2xl font-bold text-white mb-3 font-serif translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{sig.title}</h3>
-                  <p className="text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{sig.description}</p>
-                </div>
+                <TiltCard tiltIntensity={15}>
+                  <div className="group relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer">
+                    <img src={sig.image} alt={sig.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                      <h3 className="text-2xl font-bold text-white mb-3 font-serif translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{sig.title}</h3>
+                      <p className="text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{sig.description}</p>
+                    </div>
+                  </div>
+                </TiltCard>
               </motion.div>
             ))}
           </div>

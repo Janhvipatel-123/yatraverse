@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Destination } from '../../../lib/destinations';
+import TiltCard from '../../../components/ui/TiltCard';
 
 interface Props {
   destination: Destination;
@@ -134,12 +135,14 @@ export default function DestinationClient({ destination }: Props) {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {destination.topAttractions.map((place, idx) => (
-                <div key={idx} className="p-8 bg-neutral-900/50 backdrop-blur-md border border-white/5 rounded-3xl hover:bg-neutral-800/50 hover:border-amber-500/30 transition-all duration-500 flex items-center gap-6 group shadow-lg">
-                  <div className="w-14 h-14 rounded-full border border-amber-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-black transition-colors duration-500">
-                    <span className="text-amber-500 group-hover:text-black font-serif text-xl">{idx + 1}</span>
+                <TiltCard key={idx} tiltIntensity={8}>
+                  <div className="p-8 bg-neutral-900/50 backdrop-blur-md border border-white/5 rounded-3xl hover:bg-neutral-800/50 hover:border-amber-500/30 transition-all duration-500 flex items-center gap-6 group shadow-lg h-full">
+                    <div className="w-14 h-14 rounded-full border border-amber-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-black transition-colors duration-500">
+                      <span className="text-amber-500 group-hover:text-black font-serif text-xl">{idx + 1}</span>
+                    </div>
+                    <h3 className="font-bold text-neutral-200 text-xl tracking-wide">{place}</h3>
                   </div>
-                  <h3 className="font-bold text-neutral-200 text-xl tracking-wide">{place}</h3>
-                </div>
+                </TiltCard>
               ))}
             </div>
           </motion.div>
@@ -152,20 +155,24 @@ export default function DestinationClient({ destination }: Props) {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
-            <div className="bg-gradient-to-br from-neutral-900 to-[#0A0A0A] border border-white/10 p-10 rounded-3xl relative overflow-hidden group hover:border-amber-500/40 transition-colors duration-500 shadow-2xl">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-colors"></div>
-              <h3 className="text-3xl font-bold mb-6 text-amber-500 font-serif">Culture</h3>
-              <p className="text-neutral-400 leading-relaxed text-lg relative z-10">
-                {destination.cultureHighlight}
-              </p>
-            </div>
-            <div className="bg-gradient-to-br from-neutral-900 to-[#0A0A0A] border border-white/10 p-10 rounded-3xl relative overflow-hidden group hover:border-amber-500/40 transition-colors duration-500 shadow-2xl">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-colors"></div>
-              <h3 className="text-3xl font-bold mb-6 text-amber-500 font-serif">Gastronomy</h3>
-              <p className="text-neutral-400 leading-relaxed text-lg relative z-10">
-                {destination.foodHighlight}
-              </p>
-            </div>
+            <TiltCard tiltIntensity={10} className="h-full">
+              <div className="h-full bg-gradient-to-br from-neutral-900 to-[#0A0A0A] border border-white/10 p-10 rounded-3xl relative overflow-hidden group hover:border-amber-500/40 transition-colors duration-500 shadow-2xl">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-colors"></div>
+                <h3 className="text-3xl font-bold mb-6 text-amber-500 font-serif">Culture</h3>
+                <p className="text-neutral-400 leading-relaxed text-lg relative z-10">
+                  {destination.cultureHighlight}
+                </p>
+              </div>
+            </TiltCard>
+            <TiltCard tiltIntensity={10} className="h-full">
+              <div className="h-full bg-gradient-to-br from-neutral-900 to-[#0A0A0A] border border-white/10 p-10 rounded-3xl relative overflow-hidden group hover:border-amber-500/40 transition-colors duration-500 shadow-2xl">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-colors"></div>
+                <h3 className="text-3xl font-bold mb-6 text-amber-500 font-serif">Gastronomy</h3>
+                <p className="text-neutral-400 leading-relaxed text-lg relative z-10">
+                  {destination.foodHighlight}
+                </p>
+              </div>
+            </TiltCard>
           </motion.div>
 
           {/* Insider Travel Tips */}
