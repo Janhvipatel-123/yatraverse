@@ -417,7 +417,7 @@ During the development of YatraVerse:
 
 # 👨‍💻 Developer
 
-**Sanskar Patel**
+**Janhvi Patel**
 
 B.Tech Computer Science (AI/ML)
 
