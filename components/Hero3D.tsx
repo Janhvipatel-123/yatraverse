@@ -3,31 +3,35 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import dynamic from 'next/dynamic';
 import MagneticButton from './MagneticButton';
-
-const Scene3D = dynamic(() => import('./Scene3D'), { ssr: false });
 
 export default function Hero3D() {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, 300]);
   const y2 = useTransform(scrollY, [0, 1000], [0, 150]);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#0A0A0A]">
-      {/* 3D Scene Area (z-0) */}
-      <motion.div style={{ y: y1 }} className="absolute inset-0 z-0 opacity-100" id="spline-scene-container">
-        <Scene3D />
-      </motion.div>
+    <section className="relative w-full min-h-screen flex items-center justify-center pt-20 overflow-hidden z-0">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 z-0 h-full w-full object-cover opacity-100"
+      >
+        <source src="/videos/hero-background.mp4" type="video/mp4" />
+      </video>
 
-      {/* Hero Content (z-10) */}
+      <div className="absolute inset-0 z-10 bg-black/40 pointer-events-none" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/40 via-black/20 to-black/80 pointer-events-none" />
+
+      {/* Hero Content (z-20) */}
       <motion.div 
         style={{ y: y2, opacity }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10 text-center px-6 max-w-5xl mx-auto mt-16 pointer-events-auto"
+        className="relative z-20 text-center px-6 max-w-5xl mx-auto mt-16 pointer-events-auto"
       >
         <motion.span 
           initial={{ opacity: 0 }}
@@ -63,7 +67,7 @@ export default function Hero3D() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
       >
         <span className="text-neutral-500 text-xs font-bold tracking-widest uppercase">Scroll to Discover</span>
         <motion.div 
