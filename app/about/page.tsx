@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import InnerPageVideoBackground from '../../components/InnerPageVideoBackground';
 
 const team = [
   {
@@ -27,7 +28,9 @@ const team = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans selection:bg-amber-500/30">
+    <>
+      <InnerPageVideoBackground />
+      <div className="min-h-screen text-neutral-50 font-sans selection:bg-amber-500/30 relative z-10">
 
       {/* Hero Section */}
       <motion.section 
@@ -37,15 +40,10 @@ export default function AboutPage() {
         className="relative h-[80vh] flex items-center justify-center overflow-hidden"
       >
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-[#0A0A0A]/40 to-[#0A0A0A] z-10"></div>
-          <img 
-            src="https://images.unsplash.com/photo-1600100397608-f010f41cb8ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-            alt="YatraVerse Heritage" 
-            className="w-full h-full object-cover opacity-60 scale-105 transform motion-safe:animate-[pulse_20s_ease-in-out_infinite_alternate]"
-          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A0A]/40 to-[#0A0A0A] z-10"></div>
         </div>
         
-        <div className="relative z-20 text-center px-6 w-full max-w-4xl mx-auto mt-20">
+        <div className="relative z-20 text-center px-6 max-w-4xl mx-auto mt-20">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -222,5 +220,6 @@ export default function AboutPage() {
       </section>
 
     </div>
+    </>
   );
 }

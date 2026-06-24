@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import InnerPageVideoBackground from '../../components/InnerPageVideoBackground';
 
 export default function AIGuidePage() {
   return (
-    <div className="pt-24 pb-16 min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans flex flex-col max-w-7xl mx-auto px-6 relative">
+    <>
+      <InnerPageVideoBackground />
+      <div className="pt-24 pb-16 min-h-screen text-neutral-50 font-sans flex flex-col max-w-7xl mx-auto px-6 relative z-10">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -147,5 +150,6 @@ export default function AIGuidePage() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }

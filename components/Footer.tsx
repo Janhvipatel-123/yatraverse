@@ -97,8 +97,8 @@ export default function Footer() {
         <div className="text-center flex flex-col md:flex-row justify-between items-center gap-4 text-neutral-500 text-xs tracking-widest uppercase">
           <p>&copy; {new Date().getFullYear()} YatraVerse. Crafted for the discerning traveler.</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-amber-500 transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-amber-500 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

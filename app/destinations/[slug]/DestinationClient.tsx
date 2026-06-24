@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Destination } from '../../../lib/destinations';
 import TiltCard from '../../../components/ui/TiltCard';
+import InnerPageVideoBackground from '../../../components/InnerPageVideoBackground';
 
 interface Props {
   destination: Destination;
@@ -14,7 +15,10 @@ export default function DestinationClient({ destination }: Props) {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans selection:bg-amber-500/30">
+    <div className="relative min-h-screen overflow-hidden text-neutral-50 font-sans selection:bg-amber-500/30">
+      <InnerPageVideoBackground />
+      
+      <div className="relative z-20">
 
       {/* Cinematic Hero Section */}
       <motion.section 
@@ -23,17 +27,12 @@ export default function DestinationClient({ destination }: Props) {
         transition={{ duration: 1.2 }}
         className="relative h-screen flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#0A0A0A] z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent z-10"></div>
-          <img 
-            src={destination.heroImage} 
-            alt={destination.name} 
-            className="w-full h-full object-cover opacity-80 scale-105 transform motion-safe:animate-[pulse_20s_ease-in-out_infinite_alternate]"
-          />
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-transparent z-10"></div>
         </div>
         
-        <div className="relative z-20 text-center px-6 w-full max-w-5xl mx-auto mt-20">
+        <div className="relative z-20 text-center px-6 max-w-5xl mx-auto mt-20">
           <motion.span 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -320,6 +319,7 @@ export default function DestinationClient({ destination }: Props) {
         </div>
       </motion.section>
 
+      </div>
     </div>
   );
 }

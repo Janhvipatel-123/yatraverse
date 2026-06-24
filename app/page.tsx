@@ -21,10 +21,32 @@ export default function Home() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8 }}
         id="destinations" 
-        className="py-32 px-6 relative z-10 bg-[#0A0A0A] overflow-hidden"
+        className="py-32 px-6 relative z-10 overflow-hidden bg-black"
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-amber-600/5 rounded-full blur-[150px] pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 z-0 h-full w-full object-cover"
+        >
+          <source src="/videos/destinations-background.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Premium Overlays */}
+        {/* Base dark tint to ensure text readability */}
+        <div className="absolute inset-0 z-10 bg-black/50 pointer-events-none"></div>
+        {/* Top/bottom gradient blending into page bg */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A] pointer-events-none"></div>
+        {/* Subtle gold tint */}
+        <div className="absolute inset-0 z-10 bg-amber-500/5 mix-blend-overlay pointer-events-none"></div>
+        {/* Soft vignette */}
+        <div className="absolute inset-0 z-10 shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] pointer-events-none"></div>
+        
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-amber-600/10 rounded-full blur-[150px] pointer-events-none z-10"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-20">
           <div className="flex justify-between items-end mb-16">
             <div>
               <span className="text-amber-500 font-bold tracking-widest uppercase text-sm block mb-4 flex items-center gap-4">

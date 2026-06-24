@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import InnerPageVideoBackground from '../../components/InnerPageVideoBackground';
 
 export default function RidesPage() {
   const rides = [
@@ -10,7 +11,9 @@ export default function RidesPage() {
   ];
 
   return (
-    <div className="pt-24 pb-16 min-h-screen bg-[#0A0A0A] max-w-7xl mx-auto px-6">
+    <>
+      <InnerPageVideoBackground />
+      <div className="pt-24 pb-16 min-h-screen text-neutral-50 max-w-7xl mx-auto px-6 relative z-10">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-neutral-50 drop-shadow-lg">Book a <span className="text-amber-500">Ride</span></h1>
         <p className="text-neutral-400">Travel locally in comfort and luxury.</p>
@@ -117,5 +120,6 @@ export default function RidesPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

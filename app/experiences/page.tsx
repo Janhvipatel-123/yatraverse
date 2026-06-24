@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import TiltCard from '../../components/ui/TiltCard';
+import InnerPageVideoBackground from '../../components/InnerPageVideoBackground';
 
 const categories = [
   {
@@ -103,7 +104,10 @@ const reasons = [
 
 export default function ExperiencesPage() {
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans selection:bg-amber-500/30">
+    <div className="relative min-h-screen overflow-hidden text-neutral-50 font-sans selection:bg-amber-500/30">
+      <InnerPageVideoBackground />
+      
+      <div className="relative z-20">
 
       {/* Cinematic Hero Section */}
       <motion.section 
@@ -112,17 +116,12 @@ export default function ExperiencesPage() {
         transition={{ duration: 1.2 }}
         className="relative h-screen flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-black/50 to-[#0A0A0A] z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/80 via-transparent to-transparent z-10"></div>
-          <img 
-            src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-            alt="Luxury Indian Experiences" 
-            className="w-full h-full object-cover opacity-70 scale-105 transform motion-safe:animate-[pulse_20s_ease-in-out_infinite_alternate]"
-          />
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-transparent z-10"></div>
         </div>
         
-        <div className="relative z-20 text-center px-6 w-full max-w-5xl mx-auto mt-20">
+        <div className="relative z-20 text-center px-6 max-w-5xl mx-auto mt-20">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -309,8 +308,8 @@ export default function ExperiencesPage() {
 
       {/* Final CTA */}
       <section className="relative py-32 px-6 border-t border-white/10 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549603099-317a7e1f4229?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-black/80 to-[#0A0A0A]"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549603099-317a7e1f4229?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-20 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black/70 pointer-events-none"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-7xl font-bold text-neutral-50 mb-8 font-serif">Ready for the Extraordinary?</h2>
@@ -323,6 +322,7 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
+      </div>
     </div>
   );
 }
