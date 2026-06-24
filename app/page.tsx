@@ -1,12 +1,24 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Hero3D from '../components/Hero3D';
 import TiltCard from '../components/ui/TiltCard';
 
 export default function Home() {
+  const [selectedPackage, setSelectedPackage] = useState<any>(null);
+
+  const getItinerary = (duration: string) => {
+    const days = parseInt(duration) || 3;
+    return Array.from({length: days}).map((_, i) => ({
+      day: `Day ${i + 1}`,
+      title: i === 0 ? "Arrival & Royal Welcome" : i === days - 1 ? "Departure with Memories" : "Exclusive Sightseeing & Leisure",
+      desc: "Enjoy premium transfers, curated luxury experiences, and 5-star hospitality tailored to your preferences."
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-neutral-50 font-sans selection:bg-amber-500/30">
 
@@ -61,10 +73,10 @@ export default function Home() {
             {/* Mathura Card */}
             <Link href="/destinations/mathura" className="block relative z-50 cursor-pointer">
               <TiltCard className="h-[500px] rounded-2xl overflow-hidden border border-white/5 bg-white/5 backdrop-blur-md group hover:border-amber-500/30 transition-all duration-500 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-amber-950/20 group-hover:scale-110 transition-transform duration-700 pointer-events-none">
-                   <div className="absolute inset-0 bg-[url('/images/destinations/mathura.jpg')] bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-700 pointer-events-none overflow-hidden">
+                   <Image src="/images/destinations/mathura.jpg" alt="Mathura" fill className="object-cover" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="w-10 h-10 rounded-full border border-amber-500/30 flex items-center justify-center mb-6 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 pointer-events-none">
@@ -82,10 +94,10 @@ export default function Home() {
             {/* Vrindavan Card */}
             <Link href="/destinations/vrindavan" className="block relative z-50 cursor-pointer">
               <TiltCard className="h-[500px] rounded-2xl overflow-hidden border border-white/5 bg-white/5 backdrop-blur-md group hover:border-amber-500/30 transition-all duration-500 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-amber-950/20 group-hover:scale-110 transition-transform duration-700 pointer-events-none">
-                   <div className="absolute inset-0 bg-[url('/images/destinations/vrindavan.jpg')] bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-700 pointer-events-none overflow-hidden">
+                   <Image src="/images/destinations/vrindavan.jpg" alt="Vrindavan" fill className="object-cover" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="w-10 h-10 rounded-full border border-amber-500/30 flex items-center justify-center mb-6 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 pointer-events-none">
@@ -103,10 +115,10 @@ export default function Home() {
             {/* Agra Card */}
             <Link href="/destinations/agra" className="block relative z-50 cursor-pointer">
               <TiltCard className="h-[500px] rounded-2xl overflow-hidden border border-white/5 bg-white/5 backdrop-blur-md group hover:border-amber-500/30 transition-all duration-500 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-amber-950/20 group-hover:scale-110 transition-transform duration-700 pointer-events-none">
-                   <div className="absolute inset-0 bg-[url('/images/destinations/agra.jpg')] bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-700 pointer-events-none overflow-hidden">
+                   <Image src="/images/destinations/agra.jpg" alt="Agra" fill className="object-cover" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="w-10 h-10 rounded-full border border-amber-500/30 flex items-center justify-center mb-6 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 pointer-events-none">
@@ -124,10 +136,10 @@ export default function Home() {
             {/* Jaipur Card */}
             <Link href="/destinations/jaipur" className="block relative z-50 cursor-pointer">
               <TiltCard className="h-[500px] rounded-2xl overflow-hidden border border-white/5 bg-white/5 backdrop-blur-md group hover:border-amber-500/30 transition-all duration-500 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-amber-950/20 group-hover:scale-110 transition-transform duration-700 pointer-events-none">
-                   <div className="absolute inset-0 bg-[url('/images/destinations/jaipur.jpg')] bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-700 pointer-events-none overflow-hidden">
+                   <Image src="/images/destinations/jaipur.jpg" alt="Jaipur" fill className="object-cover" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="w-10 h-10 rounded-full border border-amber-500/30 flex items-center justify-center mb-6 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 pointer-events-none">
@@ -275,52 +287,52 @@ export default function Home() {
             {[
               { 
                 name: 'Kashmir Luxury Escape', 
-                duration: '5 Days / 4 Nights', 
-                price: '₹75,000', 
+                duration: '6 Days • 5 Nights', 
+                price: '₹45,000', 
                 highlights: ['Houseboat Stay', 'Shikara Ride', 'Gulmarg Gondola'], 
-                img: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' 
+                img: '/images/packages/kashmir.jpg' 
               },
               { 
                 name: 'Royal Rajasthan', 
-                duration: '7 Days / 6 Nights', 
-                price: '₹1,20,000', 
+                duration: '8 Days • 7 Nights', 
+                price: '₹65,000', 
                 highlights: ['Palace Stay', 'Desert Safari', 'Private Guide'], 
-                img: 'https://images.unsplash.com/photo-1477586957327-847a0f3f4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' 
+                img: '/images/packages/rajasthan.jpg' 
               },
               { 
                 name: 'Spiritual Varanasi', 
-                duration: '3 Days / 2 Nights', 
-                price: '₹45,000', 
+                duration: '4 Days • 3 Nights', 
+                price: '₹28,000', 
                 highlights: ['VIP Ganga Aarti', 'Sarnath Tour', 'Boat Ride'], 
-                img: 'https://images.unsplash.com/photo-1561359313-0639aad49ca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' 
+                img: '/images/destinations/varanasi.jpg'
               },
               { 
                 name: 'Kerala Backwaters', 
                 duration: '6 Days / 5 Nights', 
                 price: '₹85,000', 
                 highlights: ['Luxury Kettuvallam', 'Ayurveda Spa', 'Tea Estates'], 
-                img: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' 
+                img: '/images/destinations/vrindavan.jpg' 
               },
               { 
                 name: 'Goa Beach Retreat', 
                 duration: '4 Days / 3 Nights', 
                 price: '₹60,000', 
                 highlights: ['Private Villa', 'Yacht Charter', 'Heritage Walk'], 
-                img: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' 
+                img: '/images/destinations/mathura.jpg' 
               },
               { 
                 name: 'Ladakh Adventure', 
                 duration: '8 Days / 7 Nights', 
                 price: '₹1,10,000', 
                 highlights: ['Pangong Glamping', 'Monastery Tour', 'Oxygen Support'], 
-                img: 'https://images.unsplash.com/photo-1526715174360-15f5cc1143c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' 
+                img: '/images/destinations/agra.jpg' 
               }
             ].map((pkg, idx) => (
               <TiltCard key={idx} tiltIntensity={12} className="h-full">
                 <div className="group rounded-3xl overflow-hidden bg-white/5 border border-white/5 hover:border-amber-500/30 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] relative backdrop-blur-md h-full flex flex-col">
                   <div className="h-64 overflow-hidden relative shrink-0">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10"></div>
-                    <img src={pkg.img} alt={pkg.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
+                    <Image src={pkg.img} alt={pkg.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10 pointer-events-none"></div>
                     <div className="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
                       <span className="text-xs font-bold text-amber-500 uppercase tracking-widest">{pkg.duration}</span>
                     </div>
@@ -343,7 +355,10 @@ export default function Home() {
                         </div>
                       ))}
                     </div>
-                    <button className="w-full py-4 rounded-xl bg-amber-500/10 border border-amber-500/20 hover:bg-amber-500 hover:text-black hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-amber-500 font-bold text-sm tracking-widest uppercase transition-all duration-300">
+                    <button 
+                      onClick={() => setSelectedPackage(pkg)}
+                      className="w-full py-4 rounded-xl bg-amber-500/10 border border-amber-500/20 hover:bg-amber-500 hover:text-black hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-amber-500 font-bold text-sm tracking-widest uppercase transition-all duration-300 relative z-30"
+                    >
                       View Itinerary
                     </button>
                   </div>
@@ -427,6 +442,124 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+
+      {/* Modal */}
+      {selectedPackage && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+          <div 
+            className="absolute inset-0 bg-black/80 backdrop-blur-md" 
+            onClick={() => setSelectedPackage(null)}
+          ></div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            className="relative bg-[#0A0A0A] border border-amber-500/30 w-full max-w-4xl rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(245,158,11,0.15)] flex flex-col max-h-[90vh]"
+          >
+            {/* Header */}
+            <div className="relative h-48 md:h-64 shrink-0">
+              <Image 
+                src={selectedPackage.img} 
+                alt={selectedPackage.name} 
+                fill 
+                className="object-cover opacity-60"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent"></div>
+              
+              <button 
+                onClick={() => setSelectedPackage(null)}
+                className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-amber-500 hover:text-black text-white rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10 hover:border-amber-500 transition-all z-10"
+              >
+                ✕
+              </button>
+
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-serif text-white mb-2">{selectedPackage.name}</h2>
+                    <div className="flex items-center gap-4 text-amber-500 text-sm font-medium tracking-wider uppercase">
+                      <span>{selectedPackage.duration}</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500/50"></span>
+                      <span>{selectedPackage.price}</span>
+                    </div>
+                  </div>
+                  <Link 
+                    href={`/contact?interest=${encodeURIComponent(selectedPackage.name)}`}
+                    className="px-8 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold uppercase tracking-widest text-sm rounded-xl shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all shrink-0"
+                  >
+                    Book This Package
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-grow overflow-y-auto p-6 md:p-8 custom-scrollbar">
+              <div className="grid md:grid-cols-3 gap-8">
+                
+                {/* Left Column - Itinerary */}
+                <div className="md:col-span-2 space-y-8">
+                  <div>
+                    <h3 className="text-xl font-serif text-white border-b border-white/10 pb-4 mb-6">Day-wise Itinerary</h3>
+                    <div className="space-y-6 relative before:absolute before:inset-0 before:ml-[15px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-amber-500/50 before:to-transparent">
+                      {getItinerary(selectedPackage.duration).map((day, idx) => (
+                        <div key={idx} className="relative flex items-start justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                          {/* Timeline dot */}
+                          <div className="flex items-center justify-center w-8 h-8 rounded-full border-4 border-[#0A0A0A] bg-amber-500 absolute left-0 md:left-1/2 -translate-y-1 -translate-x-[5px] md:-translate-x-1/2 shadow-[0_0_15px_rgba(245,158,11,0.5)]"></div>
+                          
+                          <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] pl-4 md:pl-0">
+                            <div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm group-hover:border-amber-500/30 transition-colors">
+                              <span className="text-amber-500 font-bold text-sm tracking-widest uppercase mb-1 block">{day.day}</span>
+                              <h4 className="text-white font-medium mb-2">{day.title}</h4>
+                              <p className="text-neutral-400 text-sm leading-relaxed">{day.desc}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Inclusions */}
+                <div className="space-y-8">
+                  <div className="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-6">
+                    <h3 className="text-lg font-serif text-white mb-6">Included Experiences</h3>
+                    <ul className="space-y-4">
+                      {selectedPackage.highlights.map((hlt: string, i: number) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                            <svg className="w-3 h-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <span className="text-neutral-300 text-sm leading-relaxed">{hlt}</span>
+                        </li>
+                      ))}
+                      <li className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-neutral-300 text-sm leading-relaxed">Luxury Stays & Transfers</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-neutral-300 text-sm leading-relaxed">Dedicated Concierge</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
 
     </div>
   );

@@ -9,19 +9,19 @@ const team = [
   {
     name: 'Aanya Sharma',
     role: 'Founder & Visionary',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/images/destinations/agra.jpg',
     bio: 'With over two decades of exploring India’s hidden gems, Aanya founded YatraVerse to redefine luxury travel with authentic cultural immersion.'
   },
   {
     name: 'Vikram Singh',
     role: 'Head of Experiences',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/images/destinations/jaipur.jpg',
     bio: 'Vikram’s royal lineage and deep-rooted connections grant YatraVerse guests exclusive access to India’s most private heritage sites.'
   },
   {
     name: 'Priya Patel',
     role: 'Lead Concierge',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/images/destinations/vrindavan.jpg',
     bio: 'Dedicated to perfection, Priya ensures that every bespoke itinerary is executed flawlessly, anticipating needs before they arise.'
   }
 ];
@@ -200,7 +200,7 @@ export default function AboutPage() {
 
       {/* Final CTA */}
       <section className="relative py-32 px-6 border-t border-white/10 overflow-hidden text-center">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1596760565866-e82200dc0f8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/images/destinations/mathura.jpg')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto">

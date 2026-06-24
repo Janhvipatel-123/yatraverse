@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import TiltCard from '../../components/ui/TiltCard';
 import InnerPageVideoBackground from '../../components/InnerPageVideoBackground';
@@ -14,7 +15,7 @@ const categories = [
     highlights: ['Exclusive Ganga Aarti access', 'Private meditation with masters', 'VIP temple darshan'],
     duration: '5 - 14 Days',
     price: 'From ₹85,000',
-    image: 'https://images.unsplash.com/photo-1561359313-0639aad49ca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: '/images/experiences/spiritual-tour.jpg',
   },
   {
     id: 'heritage',
@@ -23,7 +24,7 @@ const categories = [
     highlights: ['Private historian guides', 'After-hours monument access', 'Palatial heritage stays'],
     duration: '3 - 10 Days',
     price: 'From ₹1,20,000',
-    image: 'https://images.unsplash.com/photo-1564507592208-5287514a3875?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: '/images/experiences/heritage-walk.jpg',
   },
   {
     id: 'food',
@@ -32,7 +33,7 @@ const categories = [
     highlights: ['Dining with royal families', 'Masterclasses with top chefs', 'Curated street food tours'],
     duration: '4 - 8 Days',
     price: 'From ₹65,000',
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f39ce9b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: '/images/experiences/food-trail.jpg',
   },
   {
     id: 'photography',
@@ -41,7 +42,7 @@ const categories = [
     highlights: ['Mentorship by pros', 'Golden hour exclusive access', 'Portrait sessions with locals'],
     duration: '7 - 12 Days',
     price: 'From ₹95,000',
-    image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: '/images/experiences/photography-tour.jpg',
   },
   {
     id: 'luxury',
@@ -50,7 +51,7 @@ const categories = [
     highlights: ['Private jet transfers', 'Presidential suite stays', '24/7 dedicated butler'],
     duration: 'Custom',
     price: 'On Request',
-    image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: '/images/experiences/luxury-travel.jpg',
   }
 ];
 
@@ -58,17 +59,17 @@ const signatures = [
   {
     title: 'The Maharaja Express',
     description: 'Journey across the Golden Triangle in India\'s most luxurious train.',
-    image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    image: '/images/packages/rajasthan.jpg'
   },
   {
     title: 'Himalayan Heli-Skiing',
     description: 'Exclusive access to untouched powder in the high Himalayas.',
-    image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    image: '/images/packages/kashmir.jpg'
   },
   {
     title: 'Private Backwater Cruise',
     description: 'Sail the serene waters of Kerala in a bespoke ultra-luxury houseboat.',
-    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    image: '/images/experiences/luxury-travel.jpg'
   }
 ];
 
@@ -190,8 +191,8 @@ export default function ExperiencesPage() {
               className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
             >
               <div className="w-full lg:w-1/2 h-[400px] md:h-[600px] relative rounded-3xl overflow-hidden group">
-                <img src={category.image} alt={category.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80"></div>
+                <Image src={category.image} alt={category.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/30 to-transparent pointer-events-none"></div>
                 <div className="absolute inset-0 border-2 border-white/10 rounded-3xl group-hover:border-amber-500/30 transition-colors duration-500"></div>
               </div>
               
@@ -265,8 +266,8 @@ export default function ExperiencesPage() {
               >
                 <TiltCard tiltIntensity={15}>
                   <div className="group relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer">
-                    <img src={sig.image} alt={sig.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                    <Image src={sig.image} alt={sig.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
                     <div className="absolute inset-0 p-8 flex flex-col justify-end">
                       <h3 className="text-2xl font-bold text-white mb-3 font-serif translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{sig.title}</h3>
                       <p className="text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{sig.description}</p>
@@ -308,7 +309,7 @@ export default function ExperiencesPage() {
 
       {/* Final CTA */}
       <section className="relative py-32 px-6 border-t border-white/10 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549603099-317a7e1f4229?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-20 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[url('/images/destinations/agra.jpg')] bg-cover bg-center opacity-20 pointer-events-none"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black/70 pointer-events-none"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto text-center">

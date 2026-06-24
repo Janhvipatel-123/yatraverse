@@ -23,6 +23,7 @@ export default function ContactFormClient() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     // Pre-fill fields if query params are present
@@ -33,30 +34,57 @@ export default function ContactFormClient() {
     }));
   }, [destinationParam, interestParam]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
     
-    // Simulate frontend form submission
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/inquiries', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          destination: formData.destination,
+          budget: formData.budget,
+          travelDates: formData.travelDates,
+          travelers: formData.travelers,
+          travelStyle: formData.style,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setIsSubmitted(true);
+        // Clear form after successful submit (wait for exit animation if any)
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            destination: '',
+            budget: '',
+            travelDates: '',
+            travelers: '',
+            style: '',
+            message: ''
+          });
+        }, 500);
+      } else {
+        setSubmitError(data.message || 'Failed to submit inquiry. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitError('An unexpected error occurred. Please try again later.');
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      
-      // Clear form after successful submit (wait for exit animation if any)
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          destination: '',
-          budget: '',
-          travelDates: '',
-          travelers: '',
-          style: '',
-          message: ''
-        });
-      }, 500);
-    }, 1500);
+    }
   };
 
   return (
@@ -89,6 +117,11 @@ export default function ContactFormClient() {
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+          {submitError && (
+            <div className="bg-red-500/10 border border-red-500/30 text-red-500 p-4 rounded-xl text-sm font-medium">
+              {submitError}
+            </div>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="name" className="block text-sm font-bold text-neutral-400 tracking-widest uppercase mb-2">Full Name *</label>

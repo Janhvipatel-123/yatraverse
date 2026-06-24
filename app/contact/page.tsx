@@ -115,7 +115,7 @@ export default function ContactPage() {
 
             {/* Google Maps Placeholder */}
             <div className="w-full h-64 bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden relative group flex items-center justify-center">
-               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700"></div>
+               <div className="absolute inset-0 bg-[url('/images/destinations/agra.jpg')] bg-cover bg-center opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700"></div>
                <div className="absolute inset-0 bg-black/40"></div>
                <div className="relative z-10 bg-black/60 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full flex items-center gap-3">
                  <svg className="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
