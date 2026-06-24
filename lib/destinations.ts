@@ -22,7 +22,7 @@ export const destinations: Destination[] = [
     name: 'Mathura',
     state: 'Uttar Pradesh',
     tagline: 'The Sacred Birthplace of Divinity',
-    heroImage: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/destinations/mathura.jpg',
     description: 'Mathura is one of Hinduism\'s seven sacred cities and the birthplace of Lord Krishna. With its heart rooted in the ancient past, the city is a labyrinth of lanes teeming with devotees, ancient temples, and the eternal flow of the Yamuna river. The spirituality here is palpable, offering an immersive journey into India\'s rich mythological heritage.',
     history: 'Mathura\'s history dates back to at least the 6th century BCE. As the legendary capital of the Surasena Kingdom, it was a pivotal center of trade, art, and religion. Over millennia, it flourished under the Mauryan and Kushan empires, becoming a beacon of Buddhist and Jain art before re-establishing itself as a core Hindu pilgrimage site.',
     bestTime: 'Oct - Mar',
@@ -41,10 +41,10 @@ export const destinations: Destination[] = [
       { question: 'What is the best time to experience Holi?', answer: 'Holi in Mathura starts almost a week before the main festival. Plan your visit for late February or March, and book accommodations well in advance.' }
     ],
     galleryImages: [
-      'https://images.unsplash.com/photo-1600080840509-563b785fcba4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1588614959060-4d1421160bf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1595844730298-b960fad9ce24?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1582298538104-fe2e74c27f59?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -52,7 +52,7 @@ export const destinations: Destination[] = [
     name: 'Vrindavan',
     state: 'Uttar Pradesh',
     tagline: 'The Transcendent Town of Divine Love',
-    heroImage: 'https://images.unsplash.com/photo-1571536802807-3cab161687f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/destinations/vrindavan.jpg',
     description: 'Vrindavan is where Lord Krishna spent his childhood days. The town echoes with the eternal romance of Radha and Krishna. It is home to over 5,000 temples, offering a transcendent experience of divine love and supreme devotion.',
     history: 'Once a dense forest (Vrinda meaning basil, van meaning forest), Vrindavan was lost to time until it was rediscovered in the 16th century by Chaitanya Mahaprabhu. Since then, it has been the epicenter of the Bhakti movement, drawing mystics, poets, and royals who built its magnificent temples.',
     bestTime: 'Oct - Mar',
@@ -71,10 +71,10 @@ export const destinations: Destination[] = [
       { question: 'Are there luxury accommodations in Vrindavan?', answer: 'Vrindavan has a growing number of premium boutique stays and heritage properties that offer luxury while maintaining a spiritual atmosphere.' }
     ],
     galleryImages: [
-      'https://images.unsplash.com/photo-1623946270591-6289cf24ce10?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1583270425983-500b46ebf7b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1589417032731-016489a2df9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1561570773-455b3576082c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -82,7 +82,7 @@ export const destinations: Destination[] = [
     name: 'Agra',
     state: 'Uttar Pradesh',
     tagline: 'The Pinnacle of Mughal Grandeur',
-    heroImage: 'https://images.unsplash.com/photo-1564507592208-5287514a3875?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/destinations/agra.jpg',
     description: 'Home to the iconic Taj Mahal, Agra is a testament to the unparalleled architectural prowess of the Mughal empire. Discover grand forts, marble mausoleums, and sprawling gardens along the banks of the Yamuna.',
     history: 'Agra reached its zenith under the Mughal emperors Akbar, Jahangir, and Shah Jahan. It served as the capital of the Mughal Empire for over a century, during which it was adorned with magnificent forts, palaces, and mausoleums, cementing its legacy as a center of art and culture.',
     bestTime: 'Oct - Mar',
@@ -101,10 +101,10 @@ export const destinations: Destination[] = [
       { question: 'Can I do a night viewing of the Taj Mahal?', answer: 'Yes, night viewings are permitted for five nights a month (during the full moon, and two days before and after), subject to advance ticketing.' }
     ],
     galleryImages: [
-      'https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1600100397608-f010f41cb8ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1596760565866-e82200dc0f8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1585506942812-e72b29cef752?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -112,7 +112,7 @@ export const destinations: Destination[] = [
     name: 'Jaipur',
     state: 'Rajasthan',
     tagline: 'The Regal Pink City',
-    heroImage: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/destinations/jaipur.jpg',
     description: 'The Pink City of India is a flamboyant showcase of Rajasthani culture. With its majestic hilltop forts, opulent palaces, and bustling bazaars, Jaipur offers a journey into a royal past.',
     history: 'Founded in 1727 by Maharaja Sawai Jai Singh II, Jaipur is India’s first planned city. It was painted pink in 1876 to welcome the Prince of Wales (King Edward VII), as pink denotes the color of hospitality. Today, it remains a vibrant symbol of royal Rajputana heritage.',
     bestTime: 'Nov - Feb',
@@ -131,10 +131,10 @@ export const destinations: Destination[] = [
       { question: 'What is the most luxurious experience in Jaipur?', answer: 'Dining in a private, candle-lit courtyard at the City Palace or staying in the Maharaja’s suite at a heritage hotel.' }
     ],
     galleryImages: [
-      'https://images.unsplash.com/photo-1599661501632-550d42721759?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1533221975471-a4fb81f185db?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1578508608404-37fba26e82a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -142,7 +142,7 @@ export const destinations: Destination[] = [
     name: 'Kashmir',
     state: 'Jammu & Kashmir',
     tagline: 'Paradise on Earth',
-    heroImage: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/packages/kashmir.jpg',
     description: 'Often referred to as "Paradise on Earth", Kashmir boasts breathtaking valleys, serene lakes, and snow-capped Himalayan peaks. It is a destination of unparalleled natural beauty.',
     history: 'A historic crossroads of the Silk Road, Kashmir has been a center for Hinduism, Buddhism, and later Islam, shaping its unique and diverse cultural heritage over millennia.',
     bestTime: 'Mar - Oct',
@@ -153,10 +153,10 @@ export const destinations: Destination[] = [
     travelTips: ['Stay on a luxury houseboat on Nigeen Lake for a quieter experience.'],
     faq: [{ question: 'Is it safe to travel?', answer: 'Yes, the main tourist circuits are highly secured and welcoming.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1623126938974-9b2ee0a1f0a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1598091383021-15ddea10925d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1572459952044-6a0ed7a9d3fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1555541571-0062b9f3ec37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -164,7 +164,7 @@ export const destinations: Destination[] = [
     name: 'Rajasthan',
     state: 'Rajasthan',
     tagline: 'The Land of Kings',
-    heroImage: 'https://images.unsplash.com/photo-1477586957327-847a0f3f4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/packages/rajasthan.jpg',
     description: 'The land of Kings. Beyond Jaipur, Rajasthan offers a tapestry of desert landscapes, blue cities, and romantic lakes. It is the epitome of Indian royalty and heritage.',
     history: 'Forged by fierce Rajput warriors, Rajasthan\'s history is written in the imposing walls of its forts and the opulent halls of its palaces, a legacy of valor and romance.',
     bestTime: 'Oct - Mar',
@@ -175,10 +175,10 @@ export const destinations: Destination[] = [
     travelTips: ['Charter a private flight between cities to maximize your time.'],
     faq: [{ question: 'What is the best way to travel?', answer: 'A luxury chauffeur-driven SUV is highly recommended.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1582269438706-e7e0085a1a12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1582035970341-2b10a266a2e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -186,7 +186,7 @@ export const destinations: Destination[] = [
     name: 'Varanasi',
     state: 'Uttar Pradesh',
     tagline: 'The Spiritual Capital of India',
-    heroImage: 'https://images.unsplash.com/photo-1561359313-0639aad49ca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/destinations/varanasi.jpg',
     description: 'One of the oldest continuously inhabited cities in the world, Varanasi is the spiritual capital of India. Witness the circle of life and death unfolding daily along the ghats of the River Ganges.',
     history: 'According to mythology, Varanasi was founded by Lord Shiva. Historically, it has been a center of learning, philosophy, and mysticism for over 3,000 years.',
     bestTime: 'Oct - Mar',
@@ -197,10 +197,10 @@ export const destinations: Destination[] = [
     travelTips: ['Book a private sunset boat cruise on the Ganges.'],
     faq: [{ question: 'Are there luxury hotels on the Ghats?', answer: 'Yes, several restored heritage palaces offer luxury stays right on the river.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1571536802807-3cab161687f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1627896157734-4bc3e82bb2b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1588614959060-4d1421160bf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1627850849303-34e9e0d16568?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -208,7 +208,7 @@ export const destinations: Destination[] = [
     name: 'Kerala',
     state: 'Kerala',
     tagline: 'God\'s Own Country',
-    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/experiences/heritage-walk.jpg',
     description: '"God\'s Own Country" offers tranquil backwaters, lush tea gardens, pristine beaches, and rejuvenating Ayurveda resorts. It is the perfect escape for slow, mindful luxury travel.',
     history: 'A prominent spice exporter since 3000 BCE, Kerala\'s history is a melting pot of global influences—from the Phoenicians and Romans to the Portuguese and Dutch.',
     bestTime: 'Sep - Mar',
@@ -219,10 +219,10 @@ export const destinations: Destination[] = [
     travelTips: ['Indulge in a certified Ayurvedic wellness retreat.'],
     faq: [{ question: 'Is the monsoon a good time to visit?', answer: 'Yes, the monsoon is considered the best time for Ayurvedic treatments.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1582269438706-e7e0085a1a12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -230,7 +230,7 @@ export const destinations: Destination[] = [
     name: 'Goa',
     state: 'Goa',
     tagline: 'The Pearl of the Orient',
-    heroImage: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/experiences/heritage-walk.jpg',
     description: 'A blend of Indian and Portuguese cultures, Goa is famous for its sandy beaches, vibrant nightlife, historic churches, and opulent coastal villas.',
     history: 'Ruled by the Portuguese for over 450 years until 1961, Goa\'s distinct architectural and cultural footprint makes it uniquely different from the rest of India.',
     bestTime: 'Nov - Feb',
@@ -241,10 +241,10 @@ export const destinations: Destination[] = [
     travelTips: ['Rent a private luxury villa in South Goa for ultimate privacy.'],
     faq: [{ question: 'Is Goa only for parties?', answer: 'Not at all. South Goa and the hinterlands offer incredibly serene luxury retreats.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1549603099-317a7e1f4229?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1585828068970-1b77bfd077ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -252,7 +252,7 @@ export const destinations: Destination[] = [
     name: 'Ladakh',
     state: 'Ladakh',
     tagline: 'The Land of High Passes',
-    heroImage: 'https://images.unsplash.com/photo-1526715174360-15f5cc1143c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/experiences/heritage-walk.jpg',
     description: 'A high-altitude desert featuring dramatic landscapes, ancient Buddhist monasteries, and crystal-clear lakes. Ladakh is an adventure wrapped in serenity.',
     history: 'An independent kingdom for much of its history, Ladakh was heavily influenced by Tibet. Its remote geography preserved its unique Mahayana Buddhist culture.',
     bestTime: 'Jun - Sep',
@@ -263,10 +263,10 @@ export const destinations: Destination[] = [
     travelTips: ['Spend the first two days acclimatizing to the high altitude in Leh.'],
     faq: [{ question: 'Do I need permits?', answer: 'Yes, Inner Line Permits are required for many areas, which our concierge can arrange.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1555541571-0062b9f3ec37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1580226463990-2df551ba2f30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1598091383021-15ddea10925d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1582269438706-e7e0085a1a12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -274,7 +274,7 @@ export const destinations: Destination[] = [
     name: 'Rishikesh',
     state: 'Uttarakhand',
     tagline: 'The Yoga Capital of the World',
-    heroImage: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/experiences/heritage-walk.jpg',
     description: 'The Yoga Capital of the World sits at the foothills of the Himalayas along the Ganges. It is a haven for spiritual seekers, yogis, and adventure enthusiasts alike.',
     history: 'A legendary pilgrimage site where sages have meditated since antiquity. It gained global fame when the Beatles visited the Maharishi Mahesh Yogi ashram in 1968.',
     bestTime: 'Sep - Jun',
@@ -285,10 +285,10 @@ export const destinations: Destination[] = [
     travelTips: ['Book a luxury wellness retreat like Ananda in the Himalayas.'],
     faq: [{ question: 'Is alcohol available?', answer: 'No, Rishikesh is a holy city; alcohol and non-vegetarian food are strictly prohibited.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1600080840509-563b785fcba4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1588614959060-4d1421160bf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1595844730298-b960fad9ce24?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1582298538104-fe2e74c27f59?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -296,7 +296,7 @@ export const destinations: Destination[] = [
     name: 'Andaman Islands',
     state: 'Andaman & Nicobar',
     tagline: 'Untouched Tropical Paradise',
-    heroImage: 'https://images.unsplash.com/photo-1585828068970-1b77bfd077ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/experiences/heritage-walk.jpg',
     description: 'A stunning archipelago offering pristine white-sand beaches, crystal-clear turquoise waters, and world-class scuba diving away from the mainland\'s hustle.',
     history: 'Historically known for the infamous Cellular Jail used by the British to exile political prisoners, today it is a peaceful refuge characterized by indigenous tribes and natural beauty.',
     bestTime: 'Oct - May',
@@ -307,10 +307,10 @@ export const destinations: Destination[] = [
     travelTips: ['Charter a private yacht to explore uninhabited islands.'],
     faq: [{ question: 'Do I need a passport?', answer: 'Indian nationals do not need a passport, but foreigners require one with an Indian visa.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1549603099-317a7e1f4229?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1585828068970-1b77bfd077ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -318,7 +318,7 @@ export const destinations: Destination[] = [
     name: 'Meghalaya',
     state: 'Meghalaya',
     tagline: 'The Abode of Clouds',
-    heroImage: 'https://images.unsplash.com/photo-1617306067098-de76ebf676dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/experiences/heritage-walk.jpg',
     description: 'The "Abode of Clouds" is a surreal destination characterized by living root bridges, plunging waterfalls, and some of the cleanest villages in Asia.',
     history: 'The state was carved out of Assam and is inhabited by the Khasi, Jaintia, and Garo tribes, who follow a unique matrilineal system where lineage and inheritance pass through women.',
     bestTime: 'Oct - Apr',
@@ -329,10 +329,10 @@ export const destinations: Destination[] = [
     travelTips: ['Hire a local guide for treks to the living root bridges.'],
     faq: [{ question: 'Is it hard to reach?', answer: 'You can fly into Guwahati and take a scenic luxury car transfer to Shillong.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1617306067098-de76ebf676dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1598091383021-15ddea10925d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1572459952044-6a0ed7a9d3fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1555541571-0062b9f3ec37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   },
   {
@@ -340,7 +340,7 @@ export const destinations: Destination[] = [
     name: 'Hampi',
     state: 'Karnataka',
     tagline: 'The Forgotten Empire',
-    heroImage: 'https://images.unsplash.com/photo-1600100397608-f010f41cb8ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/images/experiences/heritage-walk.jpg',
     description: 'A UNESCO World Heritage site, Hampi features the hauntingly beautiful ruins of the Vijayanagara Empire set against a surreal landscape of giant boulders.',
     history: 'Once the capital of the prosperous Vijayanagara Empire in the 14th century, it was one of the largest and wealthiest cities in the world before being conquered and abandoned in 1565.',
     bestTime: 'Oct - Mar',
@@ -351,10 +351,10 @@ export const destinations: Destination[] = [
     travelTips: ['Stay at a luxury resort like Evolve Back for a regal experience.'],
     faq: [{ question: 'How much time is needed?', answer: 'At least 3 full days to explore both the sacred and royal centers.' }],
     galleryImages: [
-      'https://images.unsplash.com/photo-1600100397608-f010f41cb8ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1596760565866-e82200dc0f8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1585506942812-e72b29cef752?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg',
+      '/images/experiences/heritage-walk.jpg', '/images/experiences/luxury-travel.jpg', '/images/experiences/spiritual-tour.jpg', '/images/experiences/photography-tour.jpg'
     ]
   }
 ];

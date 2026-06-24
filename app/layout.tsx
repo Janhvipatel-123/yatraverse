@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "YatraVerse",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80",
+        url: "/images/destinations/mathura.jpg",
         width: 1200,
         height: 630,
         alt: "YatraVerse Luxury Travel India",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "YatraVerse | Luxury Travel & Spiritual Journeys",
     description: "Experience the soul of India with YatraVerse.",
-    images: ["https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80"],
+    images: ["/images/destinations/mathura.jpg"],
   },
 };
 
