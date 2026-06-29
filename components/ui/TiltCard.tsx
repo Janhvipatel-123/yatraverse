@@ -38,7 +38,7 @@ export default function TiltCard({ children, className = "", tiltIntensity = 8 }
     const isTouch = window.matchMedia("(pointer: coarse)").matches;
     
     if (mediaQuery.matches || isTouch) {
-      setIsInteractive(false);
+      setTimeout(() => setIsInteractive(false), 0);
     }
 
     const listener = (e: MediaQueryListEvent) => {

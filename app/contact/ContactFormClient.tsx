@@ -27,11 +27,13 @@ export default function ContactFormClient() {
 
   useEffect(() => {
     // Pre-fill fields if query params are present
-    setFormData((prev) => ({
-      ...prev,
-      destination: destinationParam ? destinationParam.toLowerCase() : prev.destination,
-      style: interestParam || prev.style,
-    }));
+    setTimeout(() => {
+      setFormData((prev) => ({
+        ...prev,
+        destination: destinationParam ? destinationParam.toLowerCase() : prev.destination,
+        style: interestParam || prev.style,
+      }));
+    }, 0);
   }, [destinationParam, interestParam]);
 
   const handleSubmit = async (e: React.FormEvent) => {
