@@ -31,6 +31,7 @@ export default function Navbar() {
     { name: "Destinations", href: "/#destinations" },
     { name: "Experiences", href: "/experiences" },
     { name: "AI Guide", href: "/ai-guide" },
+    { name: "Saved Trips", href: "/saved-trips" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];

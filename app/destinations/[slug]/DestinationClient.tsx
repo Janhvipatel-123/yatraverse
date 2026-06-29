@@ -2,10 +2,13 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Destination } from '../../../lib/destinations';
 import TiltCard from '../../../components/ui/TiltCard';
 import InnerPageVideoBackground from '../../../components/InnerPageVideoBackground';
+
+import BookingModal from '../../../components/BookingModal';
 
 interface Props {
   destination: Destination;
@@ -13,11 +16,19 @@ interface Props {
 
 export default function DestinationClient({ destination }: Props) {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   return (
     <div className="relative min-h-screen overflow-hidden text-neutral-50 font-sans selection:bg-amber-500/30">
       <InnerPageVideoBackground />
       
+      <BookingModal 
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+        packageId={destination.slug}
+        packageTitle={`${destination.name} Luxury Journey`}
+      />
+
       <div className="relative z-20">
 
       {/* Cinematic Hero Section */}
@@ -55,7 +66,7 @@ export default function DestinationClient({ destination }: Props) {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-xl md:text-3xl font-light text-neutral-300 max-w-3xl mx-auto italic font-serif"
           >
-            "{destination.tagline}"
+            &quot;{destination.tagline}&quot;
           </motion.p>
           
           <motion.div 
@@ -266,8 +277,11 @@ export default function DestinationClient({ destination }: Props) {
               Allow our luxury concierges to design a bespoke itinerary for your ultimate {destination.name} experience.
             </p>
             
-            <button className="w-full py-5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold rounded-2xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_40px_rgba(245,158,11,0.4)] transform hover:-translate-y-1 uppercase tracking-widest text-sm mb-6 relative z-10">
-              Consult Advisor
+            <button 
+              onClick={() => setIsBookingModalOpen(true)}
+              className="w-full py-5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold rounded-2xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_40px_rgba(245,158,11,0.4)] transform hover:-translate-y-1 uppercase tracking-widest text-sm mb-6 relative z-10"
+            >
+              Book This Journey
             </button>
             
             <div className="flex items-center justify-center gap-3 text-neutral-500 text-xs uppercase tracking-widest relative z-10">
@@ -306,9 +320,10 @@ export default function DestinationClient({ destination }: Props) {
                  'md:col-span-1 md:row-span-1'
                }`}
              >
-               <img 
+               <Image 
                  src={img} 
                  alt={`${destination.name} gallery ${i}`} 
+                 fill
                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100" 
                />
                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">

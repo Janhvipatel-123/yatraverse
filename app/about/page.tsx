@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import InnerPageVideoBackground from '../../components/InnerPageVideoBackground';
 
@@ -81,7 +82,7 @@ export default function AboutPage() {
             YatraVerse was born out of a profound realization: modern luxury travel often isolates the traveler from the true heartbeat of the destination. We set out to change that paradigm.
           </p>
           <p className="text-xl text-neutral-400 font-light leading-relaxed">
-            By meticulously weaving together India's rich tapestry of spirituality, royal history, and vibrant culture with world-class hospitality, we created a platform for the discerning traveler. Our mission is not just to show you India, but to let you feel its soul.
+            By meticulously weaving together India&apos;s rich tapestry of spirituality, royal history, and vibrant culture with world-class hospitality, we created a platform for the discerning traveler. Our mission is not just to show you India, but to let you feel its soul.
           </p>
         </motion.div>
       </section>
@@ -113,7 +114,7 @@ export default function AboutPage() {
             <div className="absolute top-0 left-0 w-40 h-40 bg-amber-500/5 rounded-full blur-3xl group-hover:bg-amber-500/10 transition-colors"></div>
             <h3 className="text-3xl font-bold mb-6 text-amber-500 font-serif">Our Vision</h3>
             <p className="text-neutral-300 leading-relaxed text-lg font-light">
-              To be the world's most trusted purveyor of luxury travel in India, recognized for our uncompromising standards, exclusive access, and deep respect for heritage.
+              To be the world&apos;s most trusted purveyor of luxury travel in India, recognized for our uncompromising standards, exclusive access, and deep respect for heritage.
             </p>
           </motion.div>
         </div>
@@ -187,8 +188,8 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: i * 0.2 }}
               className="group text-center"
             >
-              <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-2 border-white/10 group-hover:border-amber-500/50 transition-colors duration-500 mb-6">
-                <img src={member.image} alt={member.name} className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+              <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden border-2 border-white/10 group-hover:border-amber-500/50 transition-colors duration-500 mb-6">
+                <Image src={member.image} alt={member.name} fill className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
               </div>
               <h3 className="text-2xl font-bold text-neutral-50 font-serif mb-2">{member.name}</h3>
               <p className="text-amber-500 text-sm tracking-widest uppercase mb-4">{member.role}</p>
