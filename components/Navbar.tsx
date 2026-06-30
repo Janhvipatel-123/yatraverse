@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import MagneticButton from './MagneticButton';
@@ -56,8 +57,14 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group relative z-[110]">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center transition-transform duration-500 group-hover:rotate-180 shadow-[0_0_15px_rgba(245,158,11,0.3)]">
-              <span className="text-[#0A0A0A] font-bold text-lg leading-none transform group-hover:-rotate-180 transition-transform duration-500">Y</span>
+            <div className="flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-[0_0_15px_rgba(245,158,11,0.3)] rounded-full overflow-hidden">
+              <Image 
+                src="/images/yatraverse-logo.png" 
+                alt="YatraVerse Logo" 
+                width={50} 
+                height={50} 
+                className="rounded-full object-cover"
+              />
             </div>
             <span className="text-2xl font-bold tracking-widest uppercase font-serif text-amber-500">
               Yatra<span className="text-white font-light">Verse</span>
